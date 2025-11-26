@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller" prefHeight="500.0" prefWidth="700.0">
+    <children>
+        <TabPane prefHeight="500.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Data Pelanggan">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <Label layoutX="20.0" layoutY="20.0" text="Nama:" />
+                                <TextField fx:id="txtNama" layoutX="80.0" layoutY="16.0" />
+                                <Label layoutX="20.0" layoutY="60.0" text="Email:" />
+                                <TextField fx:id="txtEmail" layoutX="80.0" layoutY="56.0" />
+                                <Label layoutX="20.0" layoutY="100.0" text="Telepon:" />
+                                <TextField fx:id="txtTelepon" layoutX="80.0" layoutY="96.0" />
+                                
+                                <Button layoutX="250.0" layoutY="16.0" text="Add" onAction="#addPelanggan"/>
+                                <Button layoutX="250.0" layoutY="56.0" text="Edit" onAction="#editPelanggan"/>
+                                <Button layoutX="250.0" layoutY="96.0" text="Delete" onAction="#deletePelanggan"/>
+                                
+                                <TableView fx:id="tabelPelanggan" layoutX="20.0" layoutY="140.0" prefHeight="300.0" prefWidth="660.0">
+                                    <columns>
+                                        <TableColumn fx:id="colID" text="ID" prefWidth="50.0" />
+                                        <TableColumn fx:id="colNama" text="Nama" prefWidth="150.0" />
+                                        <TableColumn fx:id="colEmail" text="Email" prefWidth="200.0" />
+                                        <TableColumn fx:id="colTelepon" text="Telepon" prefWidth="150.0" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+
+                <Tab text="Data Buku">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <Label layoutX="20.0" layoutY="20.0" text="Judul:" />
+                                <TextField fx:id="txtJudul" layoutX="80.0" layoutY="16.0" />
+                                <Label layoutX="20.0" layoutY="60.0" text="Penulis:" />
+                                <TextField fx:id="txtPenulis" layoutX="80.0" layoutY="56.0" />
+                                <Label layoutX="20.0" layoutY="100.0" text="Harga:" />
+                                <TextField fx:id="txtHarga" layoutX="80.0" layoutY="96.0" />
+                                <Label layoutX="250.0" layoutY="100.0" text="Stok:" />
+                                <TextField fx:id="txtStok" layoutX="290.0" layoutY="96.0" prefWidth="60.0"/>
+                                
+                                <Button layoutX="250.0" layoutY="16.0" text="Add" onAction="#addBuku"/>
+                                <Button layoutX="250.0" layoutY="56.0" text="Edit" onAction="#editBuku"/>
+                                <Button layoutX="360.0" layoutY="96.0" text="Delete" onAction="#deleteBuku"/>
+                                
+                                <TableView fx:id="tabelBuku" layoutX="20.0" layoutY="140.0" prefHeight="300.0" prefWidth="660.0">
+                                    <columns>
+                                        <TableColumn fx:id="colBukuID" text="ID" prefWidth="50.0" />
+                                        <TableColumn fx:id="colJudul" text="Judul" prefWidth="200.0" />
+                                        <TableColumn fx:id="colPenulis" text="Penulis" prefWidth="150.0" />
+                                        <TableColumn fx:id="colHarga" text="Harga" prefWidth="100.0" />
+                                        <TableColumn fx:id="colStok" text="Stok" prefWidth="50.0" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+
+                <Tab text="Data Penjualan">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <Label layoutX="20.0" layoutY="20.0" text="ID Pelanggan:" />
+                                <TextField fx:id="txtJualPelangganID" layoutX="110.0" layoutY="16.0" prefWidth="100.0" />
+                                <Label layoutX="20.0" layoutY="60.0" text="ID Buku:" />
+                                <TextField fx:id="txtJualBukuID" layoutX="110.0" layoutY="56.0" prefWidth="100.0" />
+                                <Label layoutX="230.0" layoutY="20.0" text="Jumlah:" />
+                                <TextField fx:id="txtJumlah" layoutX="290.0" layoutY="16.0" prefWidth="80.0" />
+                                <Label layoutX="230.0" layoutY="60.0" text="Tanggal:" />
+                                <TextField fx:id="txtTanggal" layoutX="290.0" layoutY="56.0" promptText="YYYY-MM-DD" />
+                                
+                                <Button layoutX="400.0" layoutY="16.0" text="Add" onAction="#addPenjualan"/>
+                                <Button layoutX="450.0" layoutY="16.0" text="Delete" onAction="#deletePenjualan"/>
+                                
+                                <TableView fx:id="tabelPenjualan" layoutX="20.0" layoutY="100.0" prefHeight="340.0" prefWidth="660.0">
+                                    <columns>
+                                        <TableColumn fx:id="colJualID" text="ID" prefWidth="50.0" />
+                                        <TableColumn fx:id="colJualPelanggan" text="ID Pelanggan" prefWidth="100.0" />
+                                        <TableColumn fx:id="colJualBuku" text="ID Buku" prefWidth="100.0" />
+                                        <TableColumn fx:id="colJumlah" text="Jumlah" prefWidth="80.0" />
+                                        <TableColumn fx:id="colTotal" text="Total Harga" prefWidth="120.0" />
+                                        <TableColumn fx:id="colTanggal" text="Tanggal" prefWidth="120.0" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
